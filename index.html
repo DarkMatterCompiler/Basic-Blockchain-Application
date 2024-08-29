@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Interface</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Blockchain Explorer</h1>
+        </header>
+
+        <main>
+            <section class="card" id="mine-block">
+                <h2>Mine a New Block</h2>
+                <button class="button" onclick="mineBlock()">Mine Block</button>
+                <pre id="mine-result" class="result"></pre>
+            </section>
+
+            <section class="card" id="new-transaction">
+                <h2>Add a New Transaction</h2>
+                <form id="transaction-form" onsubmit="return addTransaction()">
+                    <input type="text" id="sender" placeholder="Sender" required>
+                    <input type="text" id="recipient" placeholder="Recipient" required>
+                    <input type="number" id="amount" placeholder="Amount" required>
+                    <button type="submit" class="button">Add Transaction</button>
+                </form>
+                <pre id="transaction-result" class="result"></pre>
+            </section>
+
+            <section class="card" id="full-chain">
+                <h2>View Blockchain</h2>
+                <button class="button" onclick="getFullChain()">Get Blockchain</button>
+                <pre id="chain-result" class="result"></pre>
+            </section>
+
+            <section class="card" id="register-node">
+                <h2>Register a Node</h2>
+                <form id="register-form" onsubmit="return registerNode()">
+                    <input type="text" id="node-address" placeholder="Node Address" required>
+                    <button type="submit" class="button">Register Node</button>
+                </form>
+                <pre id="register-result" class="result"></pre>
+            </section>
+
+            <section class="card" id="resolve-conflicts">
+                <h2>Resolve Conflicts</h2>
+                <button class="button" onclick="resolveConflicts()">Resolve Conflicts</button>
+                <pre id="resolve-result" class="result"></pre>
+            </section>
+        </main>
+
+        <footer>
+            <p>Blockchain Explorer © 2024</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
